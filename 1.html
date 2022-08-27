@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let student = [  
+                {  
+                fullname: 'นายตั้งใจ เรียนมาก',  
+                age: 18,  
+                year: 1, 
+                gpa: 3.40, 
+                help: true 
+                },  
+                {  
+                fullname: 'นายส่งงาน ตลอดมา',  
+                age: 19,  
+                year: 2, 
+                gpa: 3.00, 
+                help: false 
+                },  
+                {  
+                fullname: 'นางสาวใส่ใจ ดีงาม',  
+                age: 20,  
+                year: 3, 
+                gpa: 2.90, 
+                help: true 
+                }
+                ,{
+                fullname: 'นายก้อง กินข้าวนาน',
+                age: 18,  
+                year: 1, 
+                gpa: 3.20, 
+                help: false 
+                }
+                ,{
+                fullname: 'นายสุขสรร เบื่อเรียน',
+                age: 18,  
+                year: 1, 
+                gpa: 3.19, 
+                help: false 
+                }
+                ,{
+                fullname: 'นายเก้า ปั่นงานไฟไหม้',
+                age: 21,  
+                year: 4, 
+                gpa: 2.74, 
+                help: true
+                }
+                ,{
+                fullname: 'นายเทค หนีเที่ยว',
+                age: 21,  
+                year: 4, 
+                gpa: 2.73, 
+                help: false
+                }
+            ]
+            const d = new Date();
+            for(let i=0;i<student.length;i++){
+                if((student[i].gpa>=3.20)&&(student[i].help==false)){
+                    console.log(student[i].fullname
+                    +" เกิดเมื่อปี "
+                    +(d.getFullYear()+543-student[i].age-1)
+                    +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+                }
+                else if((student[i].gpa>=3.20)&&(student[i].help==true)){
+                    console.log(student[i].fullname
+                    +" เกิดเมื่อปี "
+                    +(d.getFullYear()+543-student[i].age-1)
+                    +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                }
+                else if((student[i].year>=2)&&(student[i].help==true)&&(student[i].gpa>=2.75)){
+                    console.log(student[i].fullname
+                    +" เกิดเมื่อปี "
+                    +(d.getFullYear()+543-student[i].age-1)
+                    +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                }
+                else if((student[i].year>=2)&&(student[i].help==true)&&(student[i].gpa<2.75)){
+                    console.log(student[i].fullname
+                    +" เกิดเมื่อปี "
+                    +(d.getFullYear()+543-student[i].age-1)
+                    +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์")
+                }
+                else if((student[i].year>=2)&&(student[i].help==false)&&(student[i].gpa>=2.75)){
+                    console.log(student[i].fullname
+                    +" เกิดเมื่อปี "
+                    +(d.getFullYear()+543-student[i].age-1)
+                    +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์แต่ไม่ช่วยภาควิชา")
+                }
+                else{
+                    console.log(student[i].fullname
+                    +" เกิดเมื่อปี "
+                    +(d.getFullYear()+543-student[i].age-1)
+                    +" ไม่ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์และยังไม่ช่วยภาควิชาด้วย")
+                }
+            }
+            let count=0,sum=0
+            console.log("ชั้นปีที่ 1\n");
+            for(let i=0;i<student.length;i++){
+                 if(student[i].year==1){
+                    if((student[i].gpa>=3.20)&&(student[i].help==false)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+                    }
+                    else if((student[i].gpa>=3.20)&&(student[i].help==true)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                    }
+                    else{count++}
+                    sum++
+                }
+            }
+            if(count==sum){
+                console.log("ไม่มี")
+            }
+            count=0 
+            sum=0
+                console.log("ชั้นปีที่ 2\n")
+                for(let i=0;i<student.length;i++){
+                if(student[i].year==2){
+                    if((student[i].gpa>=3.20)&&(student[i].help==true)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                    }
+                    else if((student[i].gpa>=3.20)&&(student[i].help==false)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+                    }
+                    else{count++}
+                    sum++  
+                }
+                
+            }
+            if(count==sum){
+                console.log("ไม่มี")
+            }
+                count=0
+                sum=0
+                console.log("ชั้นปีที่ 3\n")
+                for(let i=0;i<student.length;i++){
+                if(student[i].year==3){
+                    if((student[i].gpa>=3.20)&&(student[i].help==true)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                    }
+                    else if((student[i].gpa>=3.20)&&(student[i].help==false)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+                    }
+                    else if((student[i].help==true)&&(student[i].gpa>=2.75)){
+                        console.log(
+                        student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                    }
+                    else{count++}
+                    sum++
+                }
+            
+            }
+            if(count==sum){
+                console.log("ไม่มี")
+            }
+            count=0 
+            sum=0
+                console.log("ชั้นปีที่ 4\n")
+                for(let i=0;i<student.length;i++){
+                if(student[i].year==4){
+                    if((student[i].gpa>=3.20)&&(student[i].help==true)){
+                        console.log(
+                        student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                    }
+                    else if((student[i].gpa>=3.20)&&(student[i].help==false)){
+                        console.log(student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+                    }
+                    else if((student[i].help==true)&&(student[i].gpa>=2.75)){
+                        console.log(
+                        student[i].fullname
+                        +" เกิดเมื่อปี "
+                        +(d.getFullYear()+543-student[i].age-1)
+                        +" ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยภาควิชาด้วย")
+                    }
+                    else{count++}
+                    sum++
+                }
+                
+            }
+            if(count==sum){
+                console.log("ไม่มี")
+            }
+
+        </script>
+    </head>
+</html>
